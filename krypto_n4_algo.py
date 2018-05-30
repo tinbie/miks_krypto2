@@ -32,12 +32,6 @@ def CondProb(_text):
 
 gText = GetPlaintext()
 
-m = 0
-n = 0
-o = 0
-p = 0
-q = 0
-
 for m in range(0, 26):
     letter1 = gAlphabet[m]
 
