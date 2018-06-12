@@ -4,22 +4,22 @@
 gAlphabet = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 gWB = [["Zeichenkette","Anzahl"]]
 
-def GetPlaintext():
+def getPlaintext():
     _date = open("text5.txt", "r")
     _text = _date.read()
     _date.close()
     return _text
 
-def StringCount(_string, _cleartext):
+def stringCount(_string, _cleartext):
     _num = _cleartext.count(_string)
     return _num
 
-def SetNum(_string, _count):            
+def setNum(_string, _count):            
     if _count > 5:
         gWB.append([_string, _count])      
     return
 
-def CondProb(_text):
+def condProb(_text):
     _count = 0
     _string = raw_input("Bedingte Wahrscheinlichkeit welches Strings? ")
     for i in range(len(_text)-4):
@@ -30,7 +30,7 @@ def CondProb(_text):
 
 #*********START*********#
 
-gText = GetPlaintext()
+gText = getPlaintext()
 
 for m in range(0, 26):
     letter1 = gAlphabet[m]
@@ -50,8 +50,8 @@ for m in range(0, 26):
                     for r in range(0, 26):
                         letter6 = gAlphabet[r]
                         letter123456 = letter1 + letter2 + letter3 + letter4 + letter5 + letter6
-                        gCounter = StringCount(letter123456, gText)
-                        SetNum(letter123456, gCounter)
+                        gCounter = stringCount(letter123456, gText)
+                        setNum(letter123456, gCounter)
                         #print("Status: Suche " + letter123456)
                         if r < 26:
                             r = r + 1
@@ -75,4 +75,4 @@ for x in gWB:
     print(x[0],x[1])          
 
 while True:
-    CondProb(gText) 
+    condProb(gText) 
